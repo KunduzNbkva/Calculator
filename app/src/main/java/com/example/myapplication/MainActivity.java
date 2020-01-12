@@ -1,4 +1,4 @@
-  package com.example.myapplication;
+package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-  public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity {
     Button button;
     TextView textView;
     Double firstArg;
@@ -20,12 +20,12 @@ import android.widget.TextView;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textView=findViewById(R.id.textView);
+        textView = findViewById(R.id.textView);
 
     }
 
-      public void onNumberClick(View view) {
-        switch (view.getId()){
+    public void onNumberClick(View view) {
+        switch (view.getId()) {
             case R.id.one:
                 textView.append("1");
                 break;
@@ -57,75 +57,73 @@ import android.widget.TextView;
                 textView.append("0");
                 break;
             case R.id.point:
-                if(textView!==null&&)
-                {textView.setText("");}else {
-                    textView.append(".") ;
+                if (textView != null && textView.length() > 0) {
+                    textView.append(".");
+                } else {
+                    {
+                        textView.setText("");
+                    }
                 }
-
                 break;
             case R.id.clean:
                 textView.setText("");
                 break;
 
 
-
-
         }
 
-      }
+    }
 
-      public void onOperationClick(View view) {
-        switch(view.getId()){
+    public void onOperationClick(View view) {
+        switch (view.getId()) {
             case R.id.minus:
-                operation="-";
-                firstArg=Double.valueOf(textView.getText().toString());
-                textView.setText(firstArg+"-");
+                operation = "-";
+                firstArg = Double.valueOf(textView.getText().toString());
+                textView.setText(firstArg + "-");
                 break;
             case R.id.plus:
-                operation="+";
-                firstArg=Double.valueOf(textView.getText().toString());
-                textView.setText(firstArg+"+");
+                operation = "+";
+                firstArg = Double.valueOf(textView.getText().toString());
+                textView.setText(firstArg + "+");
                 break;
             case R.id.division:
-                operation="/";
-                firstArg=Double.valueOf(textView.getText().toString());
-                textView.setText(firstArg+"/");
+                operation = "/";
+                firstArg = Double.valueOf(textView.getText().toString());
+                textView.setText(firstArg + "/");
                 break;
             case R.id.multiplication:
-                operation="*";
-                firstArg=Double.valueOf(textView.getText().toString());
-                textView.setText(firstArg+"*");
+                operation = "*";
+                firstArg = Double.valueOf(textView.getText().toString());
+                textView.setText(firstArg + "*");
                 break;
             case R.id.equal:
-              if(operation!=null){
-                  String second=textView.getText().toString().replace(firstArg+operation+"","");
-                  seconArg=Double.valueOf(second);
-                  switch(operation){
-                      case "+":
-                          result=firstArg+seconArg;
-                          textView.setText(firstArg+"+"+seconArg+"="+result);
-                          break;
-                      case "-":
-                          result=firstArg-seconArg;
-                          textView.setText(firstArg+"-"+seconArg+"="+result);
-                          break;
-                      case "/":
-                          result=firstArg/seconArg;
-                          textView.setText(firstArg+"/"+seconArg+"="+result);
-                          break;
-                      case "*":
-                          result=firstArg+seconArg;
-                          textView.setText(firstArg+"*"+seconArg+"="+result);
-                          break;
+                if (operation != null) {
+                    String second = textView.getText().toString().replace(firstArg + operation + "", "");
+                    seconArg = Double.valueOf(second);
+                    switch (operation) {
+                        case "+":
+                            result = firstArg + seconArg;
+                            textView.setText(firstArg + "+" + seconArg + "=" + result);
+                            break;
+                        case "-":
+                            result = firstArg - seconArg;
+                            textView.setText(firstArg + "-" + seconArg + "=" + result);
+                            break;
+                        case "/":
+                            result = firstArg / seconArg;
+                            textView.setText(firstArg + "/" + seconArg + "=" + result);
+                            break;
+                        case "*":
+                            result = firstArg + seconArg;
+                            textView.setText(firstArg + "*" + seconArg + "=" + result);
+                            break;
 
-                  }
-              }
+                    }
+                }
                 break;
-
-
 
 
         }
 
-      }
-  }
+    }
+}
