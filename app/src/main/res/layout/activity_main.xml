@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/backgr"
     tools:context=".MainActivity">
 
     <TextView
@@ -33,7 +32,7 @@
             android:onClick="onNumberClick"
             android:text="C"
             android:textSize="30sp"
-            android:background="@android:color/holo_red_dark"/>
+            android:background="@android:color/white"/>
 
     </LinearLayout>
 
